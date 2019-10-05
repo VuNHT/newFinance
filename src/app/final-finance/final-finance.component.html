@@ -1,0 +1,38 @@
+<div class="body-final d-flex justify-content-center align-items-center">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <mat-card [class.disable]="!enableInput" class="final-card">
+                        <mat-form-field class="example-full-width" style="width: 80%">
+                                <input [(ngModel)]="priceRoom" matInput placeholder="Price Room">
+                              </mat-form-field>
+                  <button class="ml-3" (click)="inputPriceRoom()" mat-raised-button>OK</button>
+                  <button class="ml-3" (click)="reset()" mat-raised-button>RESET ALL</button>
+
+                </mat-card>
+            </div>
+            <div class="col-4">
+                    <mat-card class="final-card">
+                        <h5>Total Market: </h5>
+
+                        <div *ngFor="let item of totalMarket">
+                            <p>{{ item.name }}: {{ item.priceMarket }}</p>
+                        </div>
+                    </mat-card>
+
+            </div>
+            <div class="col-4">
+                    <mat-card class="final-card">
+                            <h5>Price: </h5>
+                        
+                            <div *ngFor="let item of totalMarket">
+                                    <p>{{ item.name }}: {{ item.price }}</p>
+                                </div>
+                    </mat-card>
+
+            </div>
+        </div>
+    </div>
+
+</div>

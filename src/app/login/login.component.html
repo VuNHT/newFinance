@@ -1,0 +1,32 @@
+<div class="body-login d-flex justify-content-center align-items-center">
+    <mat-card class="login-card">
+        <div *ngIf="!tabWelcome">
+        <h3>Login Phone Number:</h3>
+            <mat-form-field class="example-full-width" style="width: 80%">
+                    <input [(ngModel)]="phoneNumber" matInput placeholder="Phone Number">
+                  </mat-form-field>
+                  <button class="ml-3" (click)="login()" mat-raised-button>LOGIN</button>
+                  <p>{{ message }}</p>
+                </div>
+
+                <div *ngIf="tabWelcome" style="text-align: center">
+                    <h3>Hello {{ infoUser.name }}</h3>
+
+                    <mat-form-field>
+                            <mat-label style="color: black">Choose Option</mat-label>
+                            <mat-select (selectionChange)="eventSelect($event)">
+                              <mat-option [value]="'market'">
+                                    market (input)
+                              </mat-option>
+                              <mat-option [value]="'using'">
+                                    using (input)
+                              </mat-option>
+                              <mat-option [value]="'final'">
+                                    Final Finance (View)
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                </div>
+    </mat-card>
+</div>
+
